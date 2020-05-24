@@ -1,144 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Openjanala</title>
-        <link href="{{asset('css/app.css')}}" rel="stylesheet" />
-        <link href="{{asset('backend/css/styles.css')}}" rel="stylesheet" />
-        <link href="{{asset('backend/css/bootstrap4.min.css')}}" rel="stylesheet" crossorigin="anonymous" />
-        <script src="{{asset('backend/js/font-awesome.all.min.js')}}" crossorigin="anonymous"></script>
-    </head>
-    <body class="sb-nav-fixed">
-        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.html">Openjanala</a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button
-            ><!-- Navbar Search-->
-            <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-                <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
-                    <div class="input-group-append">
-                        <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
-                    </div>
-                </div>
-            </form>
-            <!-- Navbar-->
-            <ul class="navbar-nav ml-auto ml-md-0">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="#">Settings</a><a class="dropdown-item" href="#">Activity Log</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="login.html">Logout</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
 
+<head>
+	<!-- start: Meta -->
+	<meta charset="utf-8">
+	<title>Seba Pharmacy</title>
+	<meta name="description" content="Metro Admin Template.">
+	<meta name="author" content="Łukasz Holeczek">
+	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+	<!-- end: Meta -->
+	
+	<!-- start: Mobile Specific -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- end: Mobile Specific -->
+	
+	<!-- start: CSS -->
+	<link id="bootstrap-style" href="{{asset('backend/css/bootstrap.min.css')}}" rel="stylesheet">
+	<link href="{{asset('backend/css/bootstrap-responsive.min.css')}}" rel="stylesheet">
+	<link id="base-style" href="{{asset('backend/css/style.css')}}" rel="stylesheet">
+	<link id="base-style-responsive" href="{{asset('backend/css/style-responsive.css')}}" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
+	<!-- end: CSS -->
+	
+	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+	  	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<link id="ie-style" href="css/ie.css" rel="stylesheet">
+	<![endif]-->
+	
+	<!--[if IE 9]>
+		<link id="ie9style" href="css/ie9.css" rel="stylesheet">
+	<![endif]-->
+		
+	<!-- start: Favicon -->
+	<link rel="shortcut icon" href="{{asset('backend/img/favicon.ico')}}">
+	<!-- end: Favicon -->
+		
+</head>
 
-        <div id="layoutSidenav">
-            <div id="layoutSidenav_nav">
+<body>
+		<!-- start: Header -->
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<a class="brand" href="loalhost:8000"><span>Inventory</span></a>
+								
+				<!-- start: Header Menu -->
+				<div class="nav-no-collapse header-nav">
+					<ul class="nav pull-right">
+						<li class="dropdown hidden-phone">
+							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+								<i class="halflings-icon white warning-sign"></i>
+							</a>
+							<ul class="dropdown-menu notifications">
+								<li class="dropdown-menu-title">
+ 									<span>You have 11 notifications</span>
+									<a href="#refresh"><i class="icon-repeat"></i></a>
+								</li>	
+                            	<li>
+                                    <a href="#">
+										<span class="icon blue"><i class="icon-user"></i></span>
+										<span class="message">New user registration</span>
+										<span class="time">1 min</span> 
+                                    </a>
+                                </li>
+								<li>
+                                    <a href="#">
+										<span class="icon green"><i class="icon-comment-alt"></i></span>
+										<span class="message">New comment</span>
+										<span class="time">7 min</span> 
+                                    </a>
+                                </li>
+								<li>
+                                    <a href="#">
+										<span class="icon green"><i class="icon-comment-alt"></i></span>
+										<span class="message">New comment</span>
+										<span class="time">8 min</span> 
+                                    </a>
+                                </li>
+								<li>
+                                    <a href="#">
+										<span class="icon green"><i class="icon-comment-alt"></i></span>
+										<span class="message">New comment</span>
+										<span class="time">16 min</span> 
+                                    </a>
+                                </li>
+								<li>
+                                    <a href="#">
+										<span class="icon blue"><i class="icon-user"></i></span>
+										<span class="message">New user registration</span>
+										<span class="time">36 min</span> 
+                                    </a>
+                                </li>
+								<li>
+                                    <a href="#">
+										<span class="icon yellow"><i class="icon-shopping-cart"></i></span>
+										<span class="message">2 items sold</span>
+										<span class="time">1 hour</span> 
+                                    </a>
+                                </li>
+								<li class="warning">
+                                    <a href="#">
+										<span class="icon red"><i class="icon-user"></i></span>
+										<span class="message">User deleted account</span>
+										<span class="time">2 hour</span> 
+                                    </a>
+                                </li>
+								<li class="warning">
+                                    <a href="#">
+										<span class="icon red"><i class="icon-shopping-cart"></i></span>
+										<span class="message">Transaction was canceled</span>
+										<span class="time">6 hour</span> 
+                                    </a>
+                                </li>
+								<li>
+                                    <a href="#">
+										<span class="icon green"><i class="icon-comment-alt"></i></span>
+										<span class="message">New comment</span>
+										<span class="time">yesterday</span> 
+                                    </a>
+                                </li>
+								<li>
+                                    <a href="#">
+										<span class="icon blue"><i class="icon-user"></i></span>
+										<span class="message">New user registration</span>
+										<span class="time">yesterday</span> 
+                                    </a>
+                                </li>
+                                <li class="dropdown-menu-sub-footer">
+                            		<a>View all notifications</a>
+								</li>	
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<!-- end: Header Menu -->
+				
+			</div>
+		</div>
+	</div>
+	<!-- start: Header -->
+	
+    <div class="container-fluid-full">
+        <div class="row-fluid">
+			<div id="app">
+				<!-- start: Main Menu -->
+				<div id="sidebar-left" class="span2">
+					<div class="nav-collapse sidebar-nav">
+						<ul class="nav nav-tabs nav-stacked main-menu">
+							<li><a href="loalhost:8000"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Dashboard</span></a></li>	
+							<li><a href="allmedicin.html"><i class="icon-dashboard"></i><span class="hidden-tablet"> All Medicin</span></a></li>
+							<li>
+								<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Dropdown</span><span class="label label-important"> 3 </span></a>
+								<ul>
+									<li><a class="submenu" href="submenu.html"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 1</span></a></li>
+								</ul>	
+							</li>
+							<li><a href="form.html"><i class="icon-edit"></i><span class="hidden-tablet"> Forms</span></a></li>
+							<li><a href="form.html"><i class="icon-edit"></i><span class="hidden-tablet"> Logout</span></a></li>
+						</ul>
+					</div> <!--End row-fluid -->
+				</div>
+				<!-- end: Main Menu -->
+			
+				<noscript>
+					<div class="alert alert-block span10">
+						<h4 class="alert-heading">Warning!</h4>
+						<p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
+					</div>
+				</noscript>
+			
+				<!-- start: Content -->
+				<div id="content" class="span10">
+					<ul class="breadcrumb">
+						<li>
+							<i class="icon-home"></i>
+							<a href="loalhost:8000">Home</a> 
+							<i class="icon-angle-right"></i>
+						</li>
+						<li><a href="#">Dashboard</a></li>
+					</ul>
+            	</div> <!-- End  content -->
 
+					<!-- Contain here -->
+						<!-- component matched by the route will render here -->
 
+						<router-view></router-view>
 
-                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-                    <div class="sb-sidenav-menu">
-                        <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="index.html"
-                                ><div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard</a
-                            >
-                            <div class="sb-sidenav-menu-heading">Interface</div>
-                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
-                                ><div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Layouts
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
-                            ></a>
-                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="layout-static.html">Static Navigation</a><a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a></nav>
-                            </div>
-                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages"
-                                ><div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Pages
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
-                            ></a>
-                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth"
-                                        >Authentication
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
-                                    ></a>
-                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="login.html">Login</a><a class="nav-link" href="register.html">Register</a><a class="nav-link" href="password.html">Forgot Password</a></nav>
-                                    </div>
-                                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError"
-                                        >Error
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
-                                    ></a>
-                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="401.html">401 Page</a><a class="nav-link" href="404.html">404 Page</a><a class="nav-link" href="500.html">500 Page</a></nav>
-                                    </div>
-                                </nav>
-                            </div>
-                            <div class="sb-sidenav-menu-heading">Addons</div>
-                            <a class="nav-link" href="charts.html"
-                                ><div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Charts</a
-                            ><a class="nav-link" href="tables.html"
-                                ><div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Tables</a
-                            >
-                        </div>
-                    </div>
-                    <div class="sb-sidenav-footer">
-                        <div class="small">Logged in as:</div>
-                        Start Bootstrap
-                    </div>
-                </nav>
-            </div>
+			</div> <!--  End app -->
+		</div> <!--  row-fluid -->
+	</div>  <!--  End container-fluid-full -->
 
-            <div id="layoutSidenav_content">
-            
-              <!-- // for data show here -->
-            <router-view></router-view>
+	<div class="clearfix"></div>
+	
+	<footer>
+		<p>
+			<span style="text-align:left;float:left">&copy; 2020 <a href="#" alt="Bootstrap Themes">Inventory V-1.0</a></span>
+			<span class="hidden-phone" style="text-align:right;float:right">Develovment by: <a href="http://openjanalaid.com/" alt="Openjanala IT">openjanala IT</a></span>
+		</p>
+	</footer>
 
-
-
-                <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2019</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-
-            </div>
-
-
-            </div>
-        </div>
-        <script src="{{asset('backend/js/jquery-3.4.1.min.js')}}" crossorigin="anonymous"></script>
-        <script src="{{asset('js/app.js')}}"></script>
-        <script src="{{asset('backend/js/bootstrap.bundle.min.js')}}" crossorigin="anonymous"></script>
-
-        <script src="{{asset('backend/js/scripts.js')}}"></script>
-
-        <script src="{{asset('backend/js/Chart.min.js')}}" crossorigin="anonymous"></script>
-
-        <script src="{{asset('backend/assets/demo/chart-area-demo.js')}}"></script>
-        <script src="{{asset('backend/assets/demo/chart-bar-demo.js')}}"></script>
-
-        <script src="{{asset('backend/js/dataTables.min.js')}}" crossorigin="anonymous"></script>
-        <script src="{{asset('backend/js/bootstrap4.min.js')}}" crossorigin="anonymous"></script>
-
-        <script src="{{asset('backend/assets/demo/datatables-demo.js')}}"></script>
-    </body>
+	<!-- start: JavaScript-->
+		<script src="{{asset('backend/js/jquery-1.9.1.min.js')}}"></script>
+		<script src="{{asset('backend/js/jquery-migrate-1.0.0.min.js')}}"></script>
+		<script src="{{asset('backend/js/jquery-ui-1.10.0.custom.min.js')}}"></script>
+		<script src="{{asset('backend/js/jquery.ui.touch-punch.js')}}"></script>
+		<script src="{{asset('backend/js/modernizr.js')}}"></script>
+		<script src="{{asset('backend/js/bootstrap.min.js')}}"></script>
+		<script src="{{asset('backend/js/jquery.cookie.js')}}"></script>
+		<script src="{{asset('backend/js/fullcalendar.min.js')}}"></script>
+		<script src="{{asset('backend/js/jquery.dataTables.min.js')}}"></script>
+		<script src="{{asset('backend/js/excanvas.js')}}"></script>
+		<script src="{{asset('backend/js/jquery.flot.js')}}"></script>
+		<script src="{{asset('backend/js/jquery.flot.pie.js')}}"></script>
+		<script src="{{asset('backend/js/jquery.flot.stack.js')}}"></script>
+		<script src="{{asset('backend/js/jquery.flot.resize.min.js')}}"></script>
+		<script src="{{asset('backend/js/jquery.chosen.min.js')}}"></script>
+		<script src="{{asset('backend/js/jquery.uniform.min.js')}}"></script>
+		<script src="{{asset('backend/js/jquery.cleditor.min.js')}}"></script>
+		<script src="{{asset('backend/js/jquery.noty.js')}}"></script>
+		<script src="{{asset('backend/js/jquery.elfinder.min.js')}}"></script>
+		<script src="{{asset('backend/js/jquery.raty.min.js')}}"></script>
+		<script src="{{asset('backend/js/jquery.iphone.toggle.js')}}"></script>
+		<script src="{{asset('backend/js/jquery.uploadify-3.1.min.js')}}"></script>
+		<script src="{{asset('backend/js/jquery.gritter.min.js')}}"></script>
+		<script src="{{asset('backend/js/jquery.imagesloaded.js')}}"></script>
+		<script src="{{asset('backend/js/jquery.masonry.min.js')}}"></script>
+		<script src="{{asset('backend/js/jquery.knob.modified.js')}}"></script>
+		<script src="{{asset('backend/js/jquery.sparkline.min.js')}}"></script>
+		<script src="{{asset('backend/js/counter.js')}}"></script>
+		<script src="{{asset('backend/js/retina.js')}}"></script>
+		<script src="{{asset('backend/js/custom.js')}}"></script>
+	<!-- end: JavaScript-->
+	
+</body>
 </html>
