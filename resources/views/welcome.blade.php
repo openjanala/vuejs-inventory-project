@@ -2,241 +2,193 @@
 <html lang="en">
 
 <head>
-	<!-- start: Meta -->
-	<meta charset="utf-8">
-	<title>Seba Pharmacy</title>
-	<meta name="description" content="Metro Admin Template.">
-	<meta name="author" content="Łukasz Holeczek">
-	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-	<!-- end: Meta -->
-	
-	<!-- start: Mobile Specific -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- end: Mobile Specific -->
-	
-	<!-- start: CSS -->
-	<link id="bootstrap-style" href="{{asset('backend/css/bootstrap.min.css')}}" rel="stylesheet">
-	<link href="{{asset('backend/css/bootstrap-responsive.min.css')}}" rel="stylesheet">
-	<link id="base-style" href="{{asset('backend/css/style.css')}}" rel="stylesheet">
-	<link id="base-style-responsive" href="{{asset('backend/css/style-responsive.css')}}" rel="stylesheet">
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
-	<!-- end: CSS -->
-	
-	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
-	<!--[if lt IE 9]>
-	  	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<link id="ie-style" href="css/ie.css" rel="stylesheet">
-	<![endif]-->
-	
-	<!--[if IE 9]>
-		<link id="ie9style" href="css/ie9.css" rel="stylesheet">
-	<![endif]-->
-		
-	<!-- start: Favicon -->
-	<link rel="shortcut icon" href="{{asset('backend/img/favicon.ico')}}">
-	<!-- end: Favicon -->
-		
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Openjanala IT</title>
+  <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
+  <!-- Custom fonts for this template-->
+  <link href="{{asset('backend/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+
+  <!-- Page level plugin CSS-->
+  <link href="{{asset('backend/vendor/datatables/dataTables.bootstrap4.css')}}" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="{{asset('backend/css/sb-admin.css')}}" rel="stylesheet">
+
 </head>
 
-<body>
-		<!-- start: Header -->
-	<div class="navbar">
-		<div class="navbar-inner">
-			<div class="container-fluid">
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</a>
-				<a class="brand" href="loalhost:8000"><span>Inventory</span></a>
-								
-				<!-- start: Header Menu -->
-				<div class="nav-no-collapse header-nav">
-					<ul class="nav pull-right">
-						<li class="dropdown hidden-phone">
-							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-								<i class="halflings-icon white warning-sign"></i>
-							</a>
-							<ul class="dropdown-menu notifications">
-								<li class="dropdown-menu-title">
- 									<span>You have 11 notifications</span>
-									<a href="#refresh"><i class="icon-repeat"></i></a>
-								</li>	
-                            	<li>
-                                    <a href="#">
-										<span class="icon blue"><i class="icon-user"></i></span>
-										<span class="message">New user registration</span>
-										<span class="time">1 min</span> 
-                                    </a>
-                                </li>
-								<li>
-                                    <a href="#">
-										<span class="icon green"><i class="icon-comment-alt"></i></span>
-										<span class="message">New comment</span>
-										<span class="time">7 min</span> 
-                                    </a>
-                                </li>
-								<li>
-                                    <a href="#">
-										<span class="icon green"><i class="icon-comment-alt"></i></span>
-										<span class="message">New comment</span>
-										<span class="time">8 min</span> 
-                                    </a>
-                                </li>
-								<li>
-                                    <a href="#">
-										<span class="icon green"><i class="icon-comment-alt"></i></span>
-										<span class="message">New comment</span>
-										<span class="time">16 min</span> 
-                                    </a>
-                                </li>
-								<li>
-                                    <a href="#">
-										<span class="icon blue"><i class="icon-user"></i></span>
-										<span class="message">New user registration</span>
-										<span class="time">36 min</span> 
-                                    </a>
-                                </li>
-								<li>
-                                    <a href="#">
-										<span class="icon yellow"><i class="icon-shopping-cart"></i></span>
-										<span class="message">2 items sold</span>
-										<span class="time">1 hour</span> 
-                                    </a>
-                                </li>
-								<li class="warning">
-                                    <a href="#">
-										<span class="icon red"><i class="icon-user"></i></span>
-										<span class="message">User deleted account</span>
-										<span class="time">2 hour</span> 
-                                    </a>
-                                </li>
-								<li class="warning">
-                                    <a href="#">
-										<span class="icon red"><i class="icon-shopping-cart"></i></span>
-										<span class="message">Transaction was canceled</span>
-										<span class="time">6 hour</span> 
-                                    </a>
-                                </li>
-								<li>
-                                    <a href="#">
-										<span class="icon green"><i class="icon-comment-alt"></i></span>
-										<span class="message">New comment</span>
-										<span class="time">yesterday</span> 
-                                    </a>
-                                </li>
-								<li>
-                                    <a href="#">
-										<span class="icon blue"><i class="icon-user"></i></span>
-										<span class="message">New user registration</span>
-										<span class="time">yesterday</span> 
-                                    </a>
-                                </li>
-                                <li class="dropdown-menu-sub-footer">
-                            		<a>View all notifications</a>
-								</li>	
-							</ul>
-						</li>
-					</ul>
-				</div>
-				<!-- end: Header Menu -->
-				
-			</div>
-		</div>
-	</div>
-	<!-- start: Header -->
-	
-    <div class="container-fluid-full">
-        <div class="row-fluid">
-			<div id="app">
-				<!-- start: Main Menu -->
-				<div id="sidebar-left" class="span2">
-					<div class="nav-collapse sidebar-nav">
-						<ul class="nav nav-tabs nav-stacked main-menu">
-							<li><a href="loalhost:8000"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Dashboard</span></a></li>	
-							<li><a href="allmedicin.html"><i class="icon-dashboard"></i><span class="hidden-tablet"> All Medicin</span></a></li>
-							<li>
-								<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Dropdown</span><span class="label label-important"> 3 </span></a>
-								<ul>
-									<li><a class="submenu" href="submenu.html"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 1</span></a></li>
-								</ul>	
-							</li>
-							<li><a href="form.html"><i class="icon-edit"></i><span class="hidden-tablet"> Forms</span></a></li>
-							<li><a href="form.html"><i class="icon-edit"></i><span class="hidden-tablet"> Logout</span></a></li>
-						</ul>
-					</div> <!--End row-fluid -->
-				</div>
-				<!-- end: Main Menu -->
-			
-				<noscript>
-					<div class="alert alert-block span10">
-						<h4 class="alert-heading">Warning!</h4>
-						<p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
-					</div>
-				</noscript>
-			
-				<!-- start: Content -->
-				<div id="content" class="span10">
-					<ul class="breadcrumb">
-						<li>
-							<i class="icon-home"></i>
-							<a href="loalhost:8000">Home</a> 
-							<i class="icon-angle-right"></i>
-						</li>
-						<li><a href="#">Dashboard</a></li>
-					</ul>
-            	</div> <!-- End  content -->
+<body id="page-top">
+<div id="app">
+  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-					<!-- Contain here -->
-						<!-- component matched by the route will render here -->
+    <a class="navbar-brand mr-1" href="/">Inventory Soft</a>
 
-						<router-view></router-view>
+    <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+      <i class="fas fa-bars"></i>
+    </button>
 
-			</div> <!--  End app -->
-		</div> <!--  row-fluid -->
-	</div>  <!--  End container-fluid-full -->
+    <!-- Navbar Search -->
+    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="button">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
 
-	<div class="clearfix"></div>
-	
-	<footer>
-		<p>
-			<span style="text-align:left;float:left">&copy; 2020 <a href="#" alt="Bootstrap Themes">Inventory V-1.0</a></span>
-			<span class="hidden-phone" style="text-align:right;float:right">Develovment by: <a href="http://openjanalaid.com/" alt="Openjanala IT">openjanala IT</a></span>
-		</p>
-	</footer>
+    <!-- Navbar -->
+    <ul class="navbar-nav ml-auto ml-md-0">
+      <li class="nav-item dropdown no-arrow mx-1">
+        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-bell fa-fw"></i>
+          <span class="badge badge-danger">9+</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown no-arrow mx-1">
+        <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-envelope fa-fw"></i>
+          <span class="badge badge-danger">7</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown no-arrow">
+        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-user-circle fa-fw"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+          <a class="dropdown-item" href="#">Settings</a>
+          <a class="dropdown-item" href="#">Activity Log</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+        </div>
+      </li>
+    </ul>
 
-	<!-- start: JavaScript-->
-		<script src="{{asset('backend/js/jquery-1.9.1.min.js')}}"></script>
-		<script src="{{asset('backend/js/jquery-migrate-1.0.0.min.js')}}"></script>
-		<script src="{{asset('backend/js/jquery-ui-1.10.0.custom.min.js')}}"></script>
-		<script src="{{asset('backend/js/jquery.ui.touch-punch.js')}}"></script>
-		<script src="{{asset('backend/js/modernizr.js')}}"></script>
-		<script src="{{asset('backend/js/bootstrap.min.js')}}"></script>
-		<script src="{{asset('backend/js/jquery.cookie.js')}}"></script>
-		<script src="{{asset('backend/js/fullcalendar.min.js')}}"></script>
-		<script src="{{asset('backend/js/jquery.dataTables.min.js')}}"></script>
-		<script src="{{asset('backend/js/excanvas.js')}}"></script>
-		<script src="{{asset('backend/js/jquery.flot.js')}}"></script>
-		<script src="{{asset('backend/js/jquery.flot.pie.js')}}"></script>
-		<script src="{{asset('backend/js/jquery.flot.stack.js')}}"></script>
-		<script src="{{asset('backend/js/jquery.flot.resize.min.js')}}"></script>
-		<script src="{{asset('backend/js/jquery.chosen.min.js')}}"></script>
-		<script src="{{asset('backend/js/jquery.uniform.min.js')}}"></script>
-		<script src="{{asset('backend/js/jquery.cleditor.min.js')}}"></script>
-		<script src="{{asset('backend/js/jquery.noty.js')}}"></script>
-		<script src="{{asset('backend/js/jquery.elfinder.min.js')}}"></script>
-		<script src="{{asset('backend/js/jquery.raty.min.js')}}"></script>
-		<script src="{{asset('backend/js/jquery.iphone.toggle.js')}}"></script>
-		<script src="{{asset('backend/js/jquery.uploadify-3.1.min.js')}}"></script>
-		<script src="{{asset('backend/js/jquery.gritter.min.js')}}"></script>
-		<script src="{{asset('backend/js/jquery.imagesloaded.js')}}"></script>
-		<script src="{{asset('backend/js/jquery.masonry.min.js')}}"></script>
-		<script src="{{asset('backend/js/jquery.knob.modified.js')}}"></script>
-		<script src="{{asset('backend/js/jquery.sparkline.min.js')}}"></script>
-		<script src="{{asset('backend/js/counter.js')}}"></script>
-		<script src="{{asset('backend/js/retina.js')}}"></script>
-		<script src="{{asset('backend/js/custom.js')}}"></script>
-	<!-- end: JavaScript-->
-	
+  </nav>
+
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="sidebar navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Pages</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+          <h6 class="dropdown-header">Login Screens:</h6>
+          <a class="dropdown-item" href="login.html">Login</a>
+          <a class="dropdown-item" href="register.html">Register</a>
+          <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
+          <div class="dropdown-divider"></div>
+          <h6 class="dropdown-header">Other Pages:</h6>
+          <a class="dropdown-item" href="404.html">404 Page</a>
+          <a class="dropdown-item" href="blank.html">Blank Page</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="charts.html">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Charts</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="tables.html">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Tables</span></a>
+      </li>
+    </ul>
+
+    <div id="content-wrapper">
+
+      <div class="container-fluid">
+
+      <router-view></router-view>  
+       
+      <!-- Sticky Footer -->
+      <footer class="sticky-footer">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright © Your Website 2020</span>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+    <!-- /.content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+  </div>
+  <!-- End the App -->
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="login.html">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="{{asset('backend/vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{ asset('js/app.js')}}"></script>
+  <script src="{{asset('backend/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="{{asset('backend/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+
+  <!-- Page level plugin JavaScript-->
+  <script src="{{asset('backend/vendor/chart.js/Chart.min.js')}}"></script>
+  <script src="{{asset('backend/vendor/datatables/jquery.dataTables.js')}}"></script>
+  <script src="{{asset('backend/vendor/datatables/dataTables.bootstrap4.js')}}"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="{{asset('backend/js/sb-admin.min.js')}}"></script>
+
+  <!-- Demo scripts for this page-->
+  <script src="{{asset('backend/js/demo/datatables-demo.js')}}"></script>
+  <script src="{{asset('backend/js/demo/chart-area-demo.js')}}"></script>
+
 </body>
+
 </html>
