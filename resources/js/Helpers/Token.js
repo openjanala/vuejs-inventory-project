@@ -17,4 +17,4 @@ decode(payload){
 }
 
 }
-export default Token = new Token();
+export default Token = new Token()
