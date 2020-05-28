@@ -24,7 +24,7 @@
 
 <body id="page-top">
 <div id="app">
-  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+  <nav class="navbar navbar-expand navbar-dark bg-dark static-top" id="topbar"  style="display:none;" v-show="$route.path === '/' || $route.path === '/register' || $route.path === '/forgot' ? false :true">
 
     <a class="navbar-brand mr-1" href="/">Inventory Soft</a>
 
@@ -88,7 +88,7 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="sidebar navbar-nav">
+    <ul class="sidebar navbar-nav" id="leftbar" style="display:none;" v-show="$route.path === '/' || $route.path === '/register' || $route.path === '/forgot' ? false :true">
       <li class="nav-item active">
         <a class="nav-link" href="/">
           <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -129,15 +129,14 @@
 
       <router-view></router-view>  
        
-      <!-- Sticky Footer -->
-      <footer class="sticky-footer">
+    <!-- Sticky Footer -->
+    <footer class="sticky-footer" id="footer" style="display:none;" v-show="$route.path === '/' || $route.path === '/register' || $route.path === '/forgot' ? false :true">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
             <span>Copyright © Your Website 2020</span>
           </div>
         </div>
       </footer>
-
     </div>
     <!-- /.content-wrapper -->
 
@@ -173,6 +172,15 @@
   <script src="{{asset('backend/vendor/jquery/jquery.min.js')}}"></script>
   <script src="{{ asset('js/app.js')}}"></script>
   <script src="{{asset('backend/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+  <script type="text/javascript">
+  let token = localStorage.getItem('token');
+  if(token){
+    $("#topbar").css("display"," ");
+    $("#leftbar").css("display"," ");
+    $("#footer").css("display"," ");
+  }
+  </script>
 
   <!-- Core plugin JavaScript-->
   <script src="{{asset('backend/vendor/jquery-easing/jquery.easing.min.js')}}"></script>

@@ -41518,7 +41518,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "container-fluid" }, [
         _c("ol", { staticClass: "breadcrumb" }, [
           _c("li", { staticClass: "breadcrumb-item" }, [
-            _c("a", { attrs: { href: "#" } }, [_vm._v("Dashboard")])
+            _c("a", { attrs: { href: "/" } }, [_vm._v("Dashboard")])
           ]),
           _vm._v(" "),
           _c("li", { staticClass: "breadcrumb-item active" }, [
@@ -41538,7 +41538,7 @@ var staticRenderFns = [
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "mr-5" }, [
-                    _vm._v("26 New Messages!")
+                    _vm._v("269 New Messages!")
                   ])
                 ]),
                 _vm._v(" "),
