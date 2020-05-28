@@ -14,7 +14,22 @@ import {routes} from './routes';
 //import User Class 
 import User from './Helpers/User';
 window.User = User
- 
+
+
+// Sweet Alert Start
+import Swal from 'sweetalert2'
+// const Swal = require('sweetalert2')
+window.Swal = Swal;
+
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000
+});
+
+window.Toast = Toast;
+ // Sweet Alert End
 
 const router = new VueRouter({
     routes,

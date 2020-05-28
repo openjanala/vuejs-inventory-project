@@ -161,11 +161,11 @@
 
 <script type="text/javascript">
 export default {
-//       created(){
-//      if (User.loggedIn()){
-//        this.$router.push({name:'/'})
-//      }
-//    },
+      created(){
+     if (!User.loggedIn()){
+       this.$router.push({name:'/'})
+     }
+   },
 }
 </script>
 
