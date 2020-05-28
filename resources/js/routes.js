@@ -3,16 +3,17 @@ let register = require('./components/auth/register.vue').default;
 let forgot = require('./components/auth/forgot.vue').default;
 let logout = require('./components/auth/logout.vue').default;
 
-//end Authenticates
+// end Authenticates
 let home = require('./components/home.vue').default;
 
-//for Employee
-let employee = require('./components/employee/create.vue').default;
+// for Employee
+let addemployee = require('./components/employee/create.vue').default;
+let employees = require('./components/employee/index.vue').default;
 
 
 
 
-///end authentication------
+// end authentication------
 
 export const routes = [
     { path: '/', component: login,  name:'/'},
@@ -20,11 +21,12 @@ export const routes = [
     { path: '/forgot', component: forgot, name:'forgot'},
     { path: '/logout', component: logout, name:'logout'},
 
-///end authentication------
+// end authentication------
     { path: '/home', component: home, name:'home'},
 
-//for Employee
-    { path: '/add-employee', component: employee, name:'add-employee'},
+// for Employee
+    { path: '/add-employee', component: addemployee, name:'add-employee'},
+    { path: '/employees', component: employees, name:'employees'},
 
 
 

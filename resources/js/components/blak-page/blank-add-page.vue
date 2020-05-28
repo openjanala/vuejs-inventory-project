@@ -5,14 +5,14 @@
           <li class="breadcrumb-item">
             <a href="/">Dashboard</a>
           </li>
-          <li class="breadcrumb-item active"> Add Employee</li>
+          <li class="breadcrumb-item active">Employee</li>
         </ol>
        
         <div class="card footer-update">
           <div class="card-header col-md-12 ">
             <i class="fas fa-chart-area"></i>
             Employee Insert 
-            <router-link to="/employees" class="btn btn-sm btn-info" id="add_new"> All Employee</router-link>
+            <router-link to="/employee" class="btn btn-sm btn-info" id="add_new"> All Employee</router-link>
           </div>
           <div class="card-body">
           	  <form @submit.prevent="employeeInsert" enctype="multipart/form-data">
@@ -83,6 +83,7 @@
 	               <div class="col-md-6">
 	                <div class="form-label-group">
 	                 <input type="file" class="btn btn-info" @change="onFileselected">
+	       
 	                  <small class="text-danger" v-if="errors.photo">{{ errors.photo[0] }}</small>
 	                </div>
 	               </div>
@@ -140,9 +141,9 @@
         		}
         	},
         	employeeInsert(){
-        		axios.post('/api/add-employee/',this.form)
+        		axios.post('/api/employee/',this.form)
         		.then(() => {
-        			this.$router.push({ name: 'add-employee' })
+        			this.$router.push({ name: 'employee' })
         			Notification.success()
         		})
         		.catch(error => this.errors = error.response.data.errors)

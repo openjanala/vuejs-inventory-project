@@ -103,7 +103,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
         <router-link class="dropdown-item" to="/add-employee">Add Employee</router-link>
-          <a class="dropdown-item" href="login.html">All Employees</a>
+          <router-link  class="dropdown-item" to="/employees">All Employees</router-link>
         </div>
       </li>
 
@@ -160,7 +160,7 @@
     <div id="content-wrapper">
 
       <div class="container-fluid">
-
+<!-- for Content show -->
       <router-view></router-view>  
        
     <!-- Sticky Footer -->
@@ -232,5 +232,4 @@
   <script src="{{asset('backend/js/demo/chart-area-demo.js')}}"></script>
 
 </body>
-
 </html>
