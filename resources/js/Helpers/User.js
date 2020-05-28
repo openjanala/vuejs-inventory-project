@@ -13,6 +13,7 @@ class User{
 
     hasToken(){
         const storeToken = localStorage.getItem('token');
+        
         if (storeToken){
             return Token.isValid(storeToken) ? true : false
         }

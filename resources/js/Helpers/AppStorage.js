@@ -9,7 +9,7 @@ class AppStorage{
 
     store(token,user){
         this.storeToken(token)
-        this.setItem(user)
+        this.storeUser(user)
     }
 
     clear(){
