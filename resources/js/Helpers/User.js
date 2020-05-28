@@ -3,11 +3,10 @@ import AppStorage from './AppStorage'
 
 
 class User{
-
     responseAfterLogin(res){
         const access_token = res.data.access_token
         const username = res.data.name
-        if(Token.isValid(access_token)){
+        if(Token.isValid(access_token)) {
             AppStorage.store(access_token,username)
         }
     }
@@ -15,9 +14,9 @@ class User{
     hasToken(){
         const storeToken = localStorage.getItem('token');
         if (storeToken){
-            return Token.isValid(storeToken)? true : false
+            return Token.isValid(storeToken) ? true : false
         }
-        false
+        return false
     }
 
     loggedIn(){
@@ -29,7 +28,7 @@ class User{
     }
 
     name(){
-        if (this.loggedIn()){
+        if (this.loggedIn){
         return localStorage.getItem('user')
         }
     }

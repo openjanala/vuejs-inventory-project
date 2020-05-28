@@ -1993,8 +1993,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     login: function login() {
-      axios.post('api/auth/login', this.form).then(function (res) {
-        return console.log(res.data);
+      axios.post('/api/auth/login', this.form).then(function (res) {
+        return User.responseAfterLogin(res);
       })["catch"](function (error) {
         return console.log(error.response.data);
       });
@@ -53223,7 +53223,7 @@ var Token = /*#__PURE__*/function () {
       var payload = this.payload(token);
 
       if (payload) {
-        return payload.iss == "http://localhost:8000/" || "http://localhost:8000/register" ? true : false;
+        return payload.iss == "http://localhost:8000/api/auth/login" || "http://localhost:8000/api/auth/register" ? true : false;
       }
 
       return false;
@@ -53292,7 +53292,7 @@ var User = /*#__PURE__*/function () {
         return _Token__WEBPACK_IMPORTED_MODULE_0__["default"].isValid(storeToken) ? true : false;
       }
 
-      false;
+      return false;
     }
   }, {
     key: "loggedIn",
@@ -53307,7 +53307,7 @@ var User = /*#__PURE__*/function () {
   }, {
     key: "name",
     value: function name() {
-      if (this.loggedIn()) {
+      if (this.loggedIn) {
         return localStorage.getItem('user');
       }
     }
