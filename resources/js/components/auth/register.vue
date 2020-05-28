@@ -3,31 +3,34 @@
     <div class="card card-login mx-auto mt-5">
       <div class="card-header">Register A New Account</div>
       <div class="card-body">
-        <form>
+        <form @submit.prevent="signup">
           <div class="form-group">
             <div class="form-label-group">
-              <input type="text" id="inputName" class="form-control" placeholder="Your Full Name" required="required" autofocus="autofocus">
+              <input type="text" id="inputName" class="form-control" placeholder="Your Full Name" autofocus="autofocus"  v-model="form.name">
+               <small class="text-danger" v-if="errors.name">{{ errors.name[0] }}</small>
               <label for="inputName">Full Name</label>
             </div>
           </div>
 
             <div class="form-group">
             <div class="form-label-group">
-              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required" autofocus="autofocus">
+              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" autofocus="autofocus"  v-model="form.email">
+               <small class="text-danger" v-if="errors.email">{{ errors.email[0] }}</small>
               <label for="inputEmail">Email address</label>
             </div>
           </div>
 
           <div class="form-group">
             <div class="form-label-group">
-              <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
+              <input type="password" id="inputPassword" class="form-control" placeholder="Password"   v-model="form.password">
+               <small class="text-danger" v-if="errors.password">{{ errors.password[0] }}</small>
               <label for="inputPassword">Password</label>
             </div>
           </div>
 
           <div class="form-group">
             <div class="form-label-group">
-              <input type="password" id="inputConPassword" class="form-control" placeholder=" Confirm Password" required="required">
+              <input type="password" id="inputConPassword" class="form-control" placeholder=" Confirm Password"   v-model="form.password_confirmation">
               <label for="inputConPassword">Confirm Password</label>
             </div>
           </div>
@@ -44,7 +47,39 @@
 
 <script type="text/javascript">
 export default {
-    
+   created(){
+     if (User.loggedIn()){
+       this.$router.push({name:'home'})
+     }
+   },
+   data(){
+     return{
+       form:{
+         name:null,
+         email:null,
+         password:null,
+         confirm_password:null
+       },
+     errors:{}, 
+     }
+   },
+  methods:{
+    signup(){
+     axios.post('/api/auth/signup',this.form)
+     .then(res=> {
+       User.responseAfterLogin(res)
+
+      Toast.fire({
+      icon: 'success',
+      title: 'Registered in successfully'
+      })
+
+     this.$router.push({ name:'home'})
+     })
+     .catch(error => this.errors = error.response.data.errors)
+ 
+    }
+  }  
 }
 </script>
 

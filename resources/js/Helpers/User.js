@@ -26,6 +26,7 @@ class User{
 
     logout(){
         AppStorage.clear()
+        this.$router.push({ name: '/'})
     }
 
     name(){
