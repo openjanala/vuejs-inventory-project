@@ -35,7 +35,14 @@ class Notification{
     }).show();
    }
 
-
+   image_validation(){
+    new Noty({
+        type: 'error',
+        layout: 'topRight',
+        text: 'upload image less then 1mb',
+        timeout: 1000,
+    }).show();
+}
     
 }
 export default Notification = new Notification()

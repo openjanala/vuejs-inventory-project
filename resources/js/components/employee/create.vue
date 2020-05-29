@@ -87,7 +87,7 @@
 	                </div>
 	               </div>
 	                <div class="col-md-6">
-	                	<img :src="form.photo" style="height:40px; width: 40px;">
+	                	<img :src="form.photo" style="height:80px; width: 80px;">
 	                </div>
 	             </div>
 	          </div>
@@ -134,17 +134,17 @@
         			reader.onload = event => {
         				this.form.photo = event.target.result
 
-        				console.log(event.target.result);
+        				//console.log(event.target.result);
         			};
         			reader.readAsDataURL(file);
         		}
         	},
         	employeeInsert(){
-        		axios.post('/api/add-employee/',this.form)
-        		.then(() => {
-        			this.$router.push({ name: 'add-employee' })
-        			Notification.success()
-        		})
+                axios.post('/api/add-employee/',this.form)
+                then( ()=>{
+                    this.$router.push({name:'add-employee'})
+                    Notification.success()
+                })
         		.catch(error => this.errors = error.response.data.errors)
         	},
         }
