@@ -27,7 +27,7 @@
 	               </div>
 	               <div class="col-md-6">
 	                <div class="form-label-group">
-	                  <input type="text" v-model="form.email" class="form-control" >
+	                  <input type="email" v-model="form.email" class="form-control"   required="" >
 	                  <small class="text-danger" v-if="errors.email">{{ errors.email[0] }}</small>
 	                  <label for="lastName">Email Address</label>
 	                </div>
