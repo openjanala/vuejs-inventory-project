@@ -134,19 +134,20 @@
         			reader.onload = event => {
         				this.form.photo = event.target.result
 
-        				//console.log(event.target.result);
+        				console.log(event.target.result);
         			};
         			reader.readAsDataURL(file);
         		}
         	},
         	employeeInsert(){
                 axios.post('/api/add-employee/',this.form)
-                then( ()=>{
-                    this.$router.push({name:'add-employee'})
+                .then( ()=>{
+                    this.$router.push({name:'employees'})
                     Notification.success()
                 })
         		.catch(error => this.errors = error.response.data.errors)
-        	},
+            },
+            
         }
     }
 </script>

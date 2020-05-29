@@ -2300,7 +2300,8 @@ __webpack_require__.r(__webpack_exports__);
         var reader = new FileReader();
 
         reader.onload = function (event) {
-          _this.form.photo = event.target.result; //console.log(event.target.result);
+          _this.form.photo = event.target.result;
+          console.log(event.target.result);
         };
 
         reader.readAsDataURL(file);
@@ -2309,10 +2310,9 @@ __webpack_require__.r(__webpack_exports__);
     employeeInsert: function employeeInsert() {
       var _this2 = this;
 
-      axios.post('/api/add-employee/', this.form);
-      then(function () {
+      axios.post('/api/add-employee/', this.form).then(function () {
         _this2.$router.push({
-          name: 'add-employee'
+          name: 'employees'
         });
 
         Notification.success();
@@ -61666,6 +61666,7 @@ var Toast = sweetalert2__WEBPACK_IMPORTED_MODULE_5___default.a.mixin({
 });
 window.Toast = Toast; // Sweet Alert End
 
+window.Reload = new vue__WEBPACK_IMPORTED_MODULE_0___default.a();
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   routes: _routes__WEBPACK_IMPORTED_MODULE_2__["routes"],
   mode: 'history'
