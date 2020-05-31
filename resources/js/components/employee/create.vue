@@ -12,7 +12,7 @@
           <div class="card-header col-md-12 ">
             <i class="fas fa-chart-area"></i>
             Employee Insert 
-            <router-link to="/employees" class="btn btn-sm btn-info" id="add_new"> All Employee</router-link>
+            <router-link to="/employees" class="btn btn-sm btn-info" id="add_new"> All Employees</router-link>
           </div>
           <div class="card-body">
           	  <form @submit.prevent="employeeInsert" enctype="multipart/form-data">
