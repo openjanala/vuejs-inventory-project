@@ -20,8 +20,8 @@
         <!-- DataTables Example -->
      <div class="table-responsive">
       
-                <label>Search</label>
-               <input type="text" v-model="searchTerm" class="form-control" style="width:200px; "><br>
+                <label >Search</label>
+               <input type="text" v-model="searchTerm" class="form-control" style="width:200px; " placeholder="Search phone"><br>
 
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                <thead>
@@ -42,8 +42,8 @@
                     <td>{{employee.salary}}</td>
                     <td>{{employee.joining_date}}</td>
                     <td>
-                        <a href="#" class="btn btn-sm btn-info">Edit</a>
-                        <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                        <router-link :to="{name:'edit-employee', params:{id:employee.id} }" class="btn btn-sm btn-info">Edit</router-link>
+                        <a @click="deleteEmployee(employee.id)"  class="btn btn-sm btn-danger">Delete</a>
                     </td>
                   </tr>
                 </tbody>
@@ -69,6 +69,9 @@
                this.$router.push({ name:'/' })
             } 
         },
+        created(){
+        this.allEmployee();
+    }, 
     data(){
        return{
            employees:[],
@@ -79,12 +82,7 @@
         Filtersearch(){
       return this.employees.filter( employee=>{
             return employee.phone.match(this.searchTerm)
-            return employee.name.match(this.searchTerm)
-       
-          
-          
-          
-        
+            return employee.name.match(this.searchTerm)  
       })
       }
     },
@@ -93,12 +91,40 @@
             axios.get('/api/employees/')
             .then(({data})=>(this.employees = data))
             .catch()
-        }
-    },
-    created(){
-        this.allEmployee();
+        },
+    
+    deleteEmployee(id){
+        Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, Delete It!'
+        }).then((result) => {
+        if (result.value) {
+            axios.delete('/api/employees/'+id)
+            .then(()=>{
+                this.employees = this.employees.filter(employee =>{
+                    return employee.id !=id
+                    
+                })
+            })
+            .catch( ()=>{
+                this.$router.push({name:'employees'})
+            })
+
+            Swal.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+    )
+  }
+})
     }
-        
+},
+  
     }
 </script>
 
