@@ -17,5 +17,12 @@ Route::group([
 
 });
 
+//for Employees
 Route::apiResource('/add-employee','Api\EmployeeController');
 Route::apiResource('/employees','Api\EmployeeController');
+
+//for Suppliers
+Route::apiResource('/add-supplier','Api\SupplierController');
+Route::apiResource('/suppliers','Api\SupplierController');
+
+

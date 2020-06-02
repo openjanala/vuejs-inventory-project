@@ -113,8 +113,8 @@
           <span>Suppliers</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <a class="dropdown-item" href="login.html">Add Supplier</a>
-          <a class="dropdown-item" href="login.html">All Suppliers</a>
+          <router-link class="dropdown-item" to="/add-supplier">Add Supplier</router-link>
+          <router-link class="dropdown-item" to="/suppliers">All Suppliers</router-link>
         </div>
       </li>
 

@@ -44,7 +44,7 @@ class EmployeeController extends Controller
                 $ext = explode('/',$sub)[1];
                 $name= time().".".$ext;
                 $img=Image::make($photos)->resize(200,240);
-                $upload_path='backend/images/employee/';
+                $upload_path='backend/images/employees/';
                 $image_url=$upload_path.$name;
                 $img->save($image_url);
 
@@ -110,7 +110,7 @@ class EmployeeController extends Controller
                 $ext = explode('/',$sub)[1];
                 $name= time().".".$ext;
                 $img=Image::make($newphoto)->resize(200,240);
-                $upload_path='backend/images/employee/';
+                $upload_path='backend/images/employees/';
                 $image_url=$upload_path.$name;
                 $success = $img->save($image_url);
 
