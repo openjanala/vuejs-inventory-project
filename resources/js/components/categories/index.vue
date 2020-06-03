@@ -5,14 +5,14 @@
           <li class="breadcrumb-item">
             <a href="/">Dashboard</a>
           </li>
-          <li class="breadcrumb-item active"> All Suppliers</li>
+          <li class="breadcrumb-item active"> All Categories</li>
         </ol>
        
         <div class="card footer-update">
           <div class="card-header col-md-12 ">
             <i class="fas fa-chart-area"></i>
-          All Suppliers
-            <router-link to="/add-supplier" class="btn btn-sm btn-info" id="add_new"> Add Supplier</router-link>
+     Category Insert 
+            <router-link to="/add-category" class="btn btn-sm btn-info" id="add_new"> Add Category</router-link>
           </div>
           <div class="card-body">
  
@@ -21,31 +21,21 @@
      <div class="table-responsive">
       
                 <label >Search</label>
-               <input type="text" v-model="searchTerm" class="form-control" style="width:200px; " placeholder="Search phone"><br>
+               <input type="text" v-model="searchTerm" class="form-control" style="width:200px; " placeholder="Search Category Name"><br>
 
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                <thead>
                     <tr>
-                      <th>Name</th>
-                      <th>Photo</th>
-                       <th>Phone</th>
-                      <th>Email</th>
-                      <th>Address</th>
-                      <th>Shop Name</th>
+                      <th> Category Name</th>
                       <th>Action</th>
                     </tr>
                   </thead>
                 <tbody>
-                  <tr v-for="supplier in Filtersearch" :key="supplier.id">
-                    <td>{{supplier.name}}</td>
-                    <td><img :src=" supplier.photo" id="img_photo" /></td>
-                    <td>{{supplier.phone}}</td>
-                    <td>{{supplier.email}}</td>
-                    <td>{{supplier.address}}</td>
-                    <td>{{supplier.shopname}}</td>
+                  <tr v-for="category in Filtersearch" :key="category.id">
+                    <td>{{category.category_name}}</td>
                     <td>
-                        <router-link :to="{name:'edit-supplier', params:{id:supplier.id} }" class="btn btn-sm btn-info">Edit</router-link>
-                        <a @click="deleteSupplier(supplier.id)"  class="btn btn-sm btn-danger">Delete</a>
+                        <router-link :to="{name:'edit-category', params:{id:category.id} }" class="btn btn-sm btn-info">Edit</router-link>
+                        <a @click="deleteCategory(category.id)"  class="btn btn-sm btn-danger">Delete</a>
                     </td>
                   </tr>
                 </tbody>
@@ -72,30 +62,29 @@
             } 
         },
         created(){
-        this.allSupplier();
+        this.allcategories();
     }, 
     data(){
        return{
-           suppliers:[],
-           searchTerm:''
+           categories:[],
+           searchTerm:'',
        }
     },
     computed:{
         Filtersearch(){
-      return this.suppliers.filter( supplier=>{
-            return supplier.phone.match(this.searchTerm)
-            return supplier.name.match(this.searchTerm)  
+      return this.categories.filter( category=>{
+            return category.category_name.match(this.searchTerm)  
       })
       }
     },
     methods:{
-        allSupplier(){
-            axios.get('/api/suppliers/')
-            .then(({data})=>(this.suppliers = data))
+        allcategories(){
+            axios.get('/api/categories/')
+            .then(({data})=>(this.categories = data))
             .catch()
         },
     
-    deleteSupplier(id){
+    deleteCategory(id){
         Swal.fire({
         title: 'Are you sure?',
         text: "You won't be able to revert this!",
@@ -106,15 +95,15 @@
         confirmButtonText: 'Yes, Delete It!'
         }).then((result) => {
         if (result.value) {
-            axios.delete('/api/suppliers/'+id)
+            axios.delete('/api/categories/'+id)
             .then(()=>{
-                this.suppliers = this.suppliers.filter(supplier =>{
-                    return supplier.id !=id
+                this.categories = this.categories.filter(category =>{
+                    return category.id !=id
                     
                 })
             })
             .catch( ()=>{
-                this.$router.push({name:'suppliers'})
+                this.$router.push({name:'categories'})
             })
 
             Swal.fire(

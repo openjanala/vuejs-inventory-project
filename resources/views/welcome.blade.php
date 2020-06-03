@@ -121,6 +121,18 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-fw fa-folder"></i>
+          <span>Categories</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+          <router-link class="dropdown-item" to="/add-category">Add Category</router-link>
+          <router-link class="dropdown-item" to="/categories">All Categories</router-link>
+        </div>
+      </li>
+
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-fw fa-folder"></i>
           <span>Customers</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">

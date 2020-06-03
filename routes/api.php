@@ -25,4 +25,7 @@ Route::apiResource('/employees','Api\EmployeeController');
 Route::apiResource('/add-supplier','Api\SupplierController');
 Route::apiResource('/suppliers','Api\SupplierController');
 
+//for Categories
+Route::apiResource('/add-category','Api\CategoryController');
+Route::apiResource('/categories','Api\CategoryController');
 
