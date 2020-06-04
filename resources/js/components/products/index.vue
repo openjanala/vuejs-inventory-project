@@ -27,22 +27,24 @@
                <thead>
                     <tr>
                       <th>Name</th>
+                      <th>Code</th>
                       <th>Photo</th>
-                       <th>Phone</th>
-                      <th>Email</th>
-                      <th>Address</th>
-                      <th>Shop Name</th>
+                       <th>Category</th>
+                      <th>Buying Price</th>
+                      <th>Selling Price</th>
+                      <th>Root</th>
                       <th>Action</th>
                     </tr>
                   </thead>
                 <tbody>
                   <tr v-for="product in Filtersearch" :key="product.id">
-                    <td>{{product.name}}</td>
-                    <td><img :src=" supplier.photo" id="img_photo" /></td>
-                    <td>{{product.phone}}</td>
-                    <td>{{product.email}}</td>
-                    <td>{{product.address}}</td>
-                    <td>{{product.shopname}}</td>
+                    <td>{{product.product_name}}</td>
+                    <td>{{product.product_code}}</td>
+                     <td><img :src=" product.image" id="img_photo" /></td>
+                    <td>{{product.category_name}}</td>
+                    <td>{{product.buying_price}}</td>
+                    <td>{{product.selling_price}}</td>
+                    <td>{{product.root}}</td>
                     <td>
                         <router-link :to="{name:'edit-product', params:{id:product.id} }" class="btn btn-sm btn-info">Edit</router-link>
                         <a @click="deleteProduct(product.id)"  class="btn btn-sm btn-danger">Delete</a>

@@ -5,9 +5,8 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Employee;
-use DB;
 use Image;
-
+use DB;
 
 class EmployeeController extends Controller
 {

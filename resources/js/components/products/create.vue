@@ -27,8 +27,8 @@
 	               </div>
 	               <div class="col-md-6">
 	                <div class="form-label-group">
-	                  <input type="text" v-model="form.product_name" class="form-control"  required="">
-	                  <small class="text-danger" v-if="errors.product_name">{{ errors.product_name[0] }}</small>
+	                  <input type="text" v-model="form.product_code" class="form-control"  required="">
+	                  <small class="text-danger" v-if="errors.product_code">{{ errors.product_code[0] }}</small>
 	                  <label for="lastName">Product Code</label>
 	                </div>
 	               </div>
@@ -58,24 +58,52 @@
 	          </div>
 	          <div class="form-group">
 	              <div class="form-row">
-						<div class="col-md-6">
-							<div class="form-label-group">
-							<input type="text" v-model="form.phone" class="form-control"  required="">
-							<label for="phone">Phone Number</label>
-							<small class="text-danger" v-if="errors.phone">{{ errors.phone[0] }}</small>
-							</div>
-						</div>
-
-	               <div class="col-md-6">
-						<div class="form-label-group">
-							<input type="text" v-model="form.shopname" class="form-control"  required="">
-							<label for="nid">Shop Name</label>
-							<small class="text-danger" v-if="errors.shopname">{{ errors.shopname[0] }}</small>
-						</div>
+					 <div class="col-md-4">
+	                <div class="form-label-group">
+	                  <input type="text" v-model="form.root" class="form-control"  autofocus="autofocus" required="">
+	                  <small class="text-danger" v-if="errors.root">{{ errors.root[0] }}</small>
+	                  <label for="firstName">Root</label>
+	                </div>
 	               </div>
-	              
+	               <div class="col-md-4">
+	                <div class="form-label-group">
+	                  <input type="text" v-model="form.buying_price" class="form-control"  required="">
+	                  <label for="nid">Buying Price</label>
+	                  <small class="text-danger" v-if="errors.buying_price">{{ errors.buying_price[0] }}</small>
+	                </div>
+	               </div>
+	               <div class="col-md-4">
+	                <div class="form-label-group">
+	                  <input type="text" v-model="form.selling_price" class="form-control"  required="">
+	                  <label for="phone">Selling Price </label>
+	                  <small class="text-danger" v-if="errors.selling_price">{{ errors.selling_price[0] }}</small>
+	                </div>
+	               </div>
 	             </div>
 	          </div>
+
+                <div class="form-group">
+	              <div class="form-row">
+	              <div class="col-md-6">
+	                <div class="form-label-group">
+	                  <input type="date" v-model="form.buying_date" class="form-control"  required="">
+	                  <label for="nid">Buying Date</label>
+	                  <small class="text-danger" v-if="errors.buying_date">{{ errors.buying_date[0] }}</small>
+	                </div>
+	               </div>
+	               <div class="col-md-6">
+	                <div class="form-label-group">
+	                  <input type="text" v-model="form.product_quantity" class="form-control"  required="">
+	                  <label for="phone">Quantity  </label>
+	                  <small class="text-danger" v-if="errors.product_quantity">{{ errors.product_quantity[0] }}</small>
+	                </div>
+	               </div>
+	             </div>
+	          </div>
+
+               
+
+
                <div class="form-group">
 	              <div class="form-row">
 
@@ -135,8 +163,7 @@
         			let reader = new FileReader();
         			reader.onload = event => {
         				this.form.image = event.target.result
-
-        				console.log(event.target.result);
+        				//console.log(event.target.result);
         			};
         			reader.readAsDataURL(file);
         		}
