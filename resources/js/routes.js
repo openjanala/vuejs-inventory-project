@@ -21,6 +21,11 @@ let editemployee = require('./components/employees/edit.vue').default;
  let categories = require('./components/categories/index.vue').default;
  let editcategory = require('./components/categories/edit.vue').default;
 
+  //for Products
+  let addproduct = require('./components/products/create.vue').default;
+  let products = require('./components/products/index.vue').default;
+  let editproduct = require('./components/products/edit.vue').default;
+ 
 
 
 // end authentication------
@@ -49,8 +54,10 @@ export const routes = [
     { path: '/categories', component: categories, name:'categories'},
     { path: '/edit-category/:id', component: editcategory, name:'edit-category'},
   
-
-
+  //for Products
+  { path: '/add-product', component: addproduct, name:'add-product'},
+  { path: '/products', component: products, name:'products'},
+  { path: '/edit-product/:id', component: editproduct, name:'edit-product'},
 
     
 ]
