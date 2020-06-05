@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Model\Category;
+use App\Model\Expense;
 use DB;
 
-class CategoryController extends Controller
+class ExpenseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,12 +16,15 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $category = Category::orderBy('id','DESC')->get();
-         // $category=DB::table('categories')->get();
-        return response()->json($category);
-    
-    }
 
+        $expense = Expense::orderBy('id','DESC')->get();
+       return response()->json($expense);
+
+      
+     
+
+       
+    }
 
 
     /**
@@ -33,18 +36,16 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'category_name' => 'required|unique:categories|max:255',
+            'details' => 'required|unique:expenses|max:255',
+            'amount' => 'required',
+            
            ]);
 
-           $category = new Category;
-           $category->category_name = $request->category_name;
-           $category->save();
-
-           //for queary builder
-        //    $data=array();
-        //    $data['category_name']=$request->category_name;
-        //    DB::table('categories')->insert($data);
-
+           $expense = new Expense;
+           $expense->details = $request->details;
+           $expense->amount = $request->amount;
+           $expense->expense_date = date('d/m/Y');
+           $expense->save();
     }
 
     /**
@@ -55,10 +56,10 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-          // $supplier = Category::findorfail($id);
-        $category = DB::table('categories')->where('id',$id)->first();
-        return response()->json($category);
+       $expense = DB::table('expenses')->where('id',$id)->first();
+       return response()->json($expense);
     }
+
 
 
     /**
@@ -70,11 +71,11 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-         $data=array();
-        $data['category_name']=$request->category_name;
-        DB::table('categories')->where('id',$id)->update($data);
-        // $category=Category::findorfail($id);
-        // $category->save();
+        $data=array();
+        $data['details']=$request->details;
+        $data['amount']=$request->amount;
+        $data['expense_date']=$request->expense_date;
+        DB::table('expenses')->where('id',$id)->update($data);
     }
 
     /**
@@ -85,6 +86,6 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        DB::table('categories')->where('id',$id)->delete();
+        DB::table('expenses')->where('id',$id)->delete();
     }
 }

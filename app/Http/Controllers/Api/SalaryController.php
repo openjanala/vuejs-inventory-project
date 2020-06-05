@@ -16,9 +16,10 @@ class SalaryController extends Controller
 
            $month = $request->salary_month;
            $check = DB::table('salaries')->where('employee_id',$id)->where('salary_month',$month)->first();
+           
            if($check){
                 return response()->json('Salary already paid!');
-           }else{
+           } else{
                 $data = array();
                 $data['employee_id'] = $id;
                 $data['amount'] = $request->salary;

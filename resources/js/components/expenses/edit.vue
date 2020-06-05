@@ -5,28 +5,39 @@
           <li class="breadcrumb-item">
             <a href="/">Dashboard</a>
           </li>
-          <li class="breadcrumb-item active"> Edit Category</li>
+          <li class="breadcrumb-item active"> Edit Expense</li>
         </ol>
        
         <div class="card footer-update">
           <div class="card-header col-md-12 ">
             <i class="fas fa-chart-area"></i>
-            Category Update 
-            <router-link to="/categories" class="btn btn-sm btn-info" id="add_new"> All Categories</router-link>
+            Expenses Update 
+            <router-link to="/expenses" class="btn btn-sm btn-info" id="add_new"> All Expenses</router-link>
           </div>
           <div class="card-body">
-          	  <form @submit.prevent="categoryUpdate">
-                <div class="form-group">
+          	  <form @submit.prevent="expenseUpdate">
+                <div class="form-label-group">
 	              <div class="form-row">
-	               <div class="col-md-12">
+
+                      <div class="col-md-6">
 	                <div class="form-label-group">
-	                  <input type="text" v-model="form.category_name" class="form-control"   required="">
-	                  <small class="text-danger" v-if="errors.category_name">{{ errors.category_name[0] }}</small>
-	                  <label for="firstName">Full Name</label>
+	                  <input type="textarea" v-model="form.details" class="form-control"   required="">
+	                  <small class="text-danger" v-if="errors.details">{{ errors.details[0] }}</small>
+	                  <label for="firstName">Expense Details</label>
 	                </div>
 	               </div>
+
+                   <div class="col-md-6">
+	                <div class="form-label-group">
+	                  <input type="text" v-model="form.amount" class="form-control"   required="">
+	                  <small class="text-danger" v-if="errors.amount">{{ errors.amount[0] }}</small>
+	                  <label for="firstName">Amount </label>
+	                </div>
+	               </div>
+
 	             </div>
-	          </div>
+	          </div><br>
+                
                <button type="submit" class="btn btn-success">Update</button>
               </form>
           </div>
@@ -46,7 +57,7 @@
         },
         created(){
             let id = this.$route.params.id
-            axios.get('/api/categories/'+id)
+            axios.get('/api/expenses/'+id)
             .then(({data}) => (this.form = data))
             .catch(console.log('error'))
         },
@@ -54,17 +65,18 @@
         	return{
         		form:{
         			details :'',
-        			amount :'',
+                    amount :'',
+                    expense_date :'',
         		},
         		errors:{},
         	}
         },
         methods:{ 	
-        	categoryUpdate(){
+        	expenseUpdate(){
                    let id = this.$route.params.id
-                axios.patch('/api/categories/'+id,this.form)
+                axios.patch('/api/expenses/'+id,this.form)
                 .then( ()=>{
-                    this.$router.push({name:'categories'})
+                    this.$router.push({name:'expenses'})
                     Notification.success()
                 })
         		.catch(error => this.errors = error.response.data.errors)

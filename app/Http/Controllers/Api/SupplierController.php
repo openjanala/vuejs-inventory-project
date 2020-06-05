@@ -17,7 +17,7 @@ class SupplierController extends Controller
      */
     public function index()
     {
-        $supplier = Supplier::all();
+        $supplier = Supplier::orderBy('id','DESC')->get();
         return response()->json($supplier);
     }
 

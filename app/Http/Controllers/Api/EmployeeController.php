@@ -17,7 +17,7 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $employee = Employee::all();
+        $employee = Employee::orderBy('id','DESC')->get();
         return response()->json($employee);
     }
 

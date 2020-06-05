@@ -35,3 +35,12 @@ Route::apiResource('/products','Api\ProductController');
 
 //for Salary
 Route::post('/salary/paid/{id}','Api\SalaryController@Paid');
+
+//for Salary
+Route::post('/salary/paid/{id}','Api\SalaryController@Paid');
+
+//for Expense
+// Route::post('/add_expens','Api\ExpenseController');
+Route::apiResource('/add-expense','Api\ExpenseController');
+ Route::apiResource('/expenses','Api\ExpenseController');
+ 
