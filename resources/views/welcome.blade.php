@@ -140,6 +140,17 @@
         </div>
       </li>
 
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Salary</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+          <router-link class="dropdown-item" to="/given-salary">Pay Salary</router-link>
+          <router-link class="dropdown-item" to="/expense">All Salary</router-link>
+        </div>
+      </li>
+
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -32,3 +32,6 @@ Route::apiResource('/categories','Api\CategoryController');
 //for Products
 Route::apiResource('/add-product','Api\ProductController');
 Route::apiResource('/products','Api\ProductController');
+
+//for Salary
+Route::post('/salary/paid/{id}','Api\SalaryController@Paid');
