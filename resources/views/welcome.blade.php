@@ -147,6 +147,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <router-link class="dropdown-item" to="/given-salary">Pay Salary</router-link>
+          <router-link class="dropdown-item" to="/salary">All Salary</router-link>
         </div>
       </li>
 

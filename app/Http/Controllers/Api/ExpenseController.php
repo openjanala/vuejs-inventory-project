@@ -20,9 +20,6 @@ class ExpenseController extends Controller
         $expense = Expense::orderBy('id','DESC')->get();
        return response()->json($expense);
 
-      
-     
-
        
     }
 

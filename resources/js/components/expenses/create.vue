@@ -31,7 +31,7 @@
 
                     <div class="col-md-6">
 	                <div class="form-group">
-                    <label for="firstName">Amount </label>
+                    <label for="firstName">Amount Tk. </label>
 	                  <input type="text" v-model="form.amount" class="form-control"   required="">
 	                  <small class="text-danger" v-if="errors.amount">{{ errors.amount[0] }}</small>
 	                  

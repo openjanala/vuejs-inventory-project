@@ -33,14 +33,14 @@ Route::apiResource('/categories','Api\CategoryController');
 Route::apiResource('/add-product','Api\ProductController');
 Route::apiResource('/products','Api\ProductController');
 
-//for Salary
-Route::post('/salary/paid/{id}','Api\SalaryController@Paid');
-
-//for Salary
-Route::post('/salary/paid/{id}','Api\SalaryController@Paid');
-
 //for Expense
 // Route::post('/add_expens','Api\ExpenseController');
 Route::apiResource('/add-expense','Api\ExpenseController');
- Route::apiResource('/expenses','Api\ExpenseController');
+Route::apiResource('/expenses','Api\ExpenseController');
  
+ //for Salary
+Route::post('/salary/paid/{id}','Api\SalaryController@Paid');
+Route::get('/salary','Api\SalaryController@AllSalary');
+Route::get('/salary/view/{id}','Api\SalaryController@ViewSalary');
+Route::get('/edit/salary/{id}','Api\SalaryController@EditSalary');
+Route::post('/salary/update/{id}','Api\SalaryController@SalaryUpdate');

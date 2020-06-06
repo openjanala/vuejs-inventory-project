@@ -26,16 +26,17 @@ let home = require('./components/home.vue').default;
   let products = require('./components/products/index.vue').default;
   let editproduct = require('./components/products/edit.vue').default;
  
-//for Salary
-  let givensalary = require('./components/salary/all_employee.vue').default;
-  let paysalary = require('./components/salary/create.vue').default;
-
 //for Expeses
   let addexpense = require('./components/expenses/create.vue').default;
   let allexpense = require('./components/expenses/index.vue').default;
   let editexpense = require('./components/expenses/edit.vue').default;
 
-
+//for Salary
+let givensalary = require('./components/salary/all_employee.vue').default;
+let paysalary = require('./components/salary/create.vue').default;
+let allsalary = require('./components/salary/index.vue').default;
+let viewsalary = require('./components/salary/view.vue').default;
+let editsalary = require('./components/salary/edit.vue').default;
 
 
 // end authentication------
@@ -69,14 +70,21 @@ export const routes = [
   { path: '/products', component: products, name:'products'},
   { path: '/edit-product/:id', component: editproduct, name:'edit-product'},
   
-  //for Salary
-  { path: '/given-salary', component: givensalary, name:'given-salary'},
-  { path: '/pay-salary/:id', component: paysalary, name:'pay-salary'},
-
 //for Expense
  { path: '/add-expense', component: addexpense, name:'add-expense'},
  { path: '/expenses', component: allexpense, name:'expenses'},
  { path: '/edit-expense/:id', component: editexpense, name:'edit-expense'},
+
+//for Salary
+{ path: '/given-salary', component: givensalary, name:'given-salary'},
+{ path: '/pay-salary/:id', component: paysalary, name:'pay-salary'},
+{ path: '/salary', component: allsalary, name:'salary'},
+{ path: '/view-salary/:id', component: viewsalary, name:'view-salary'},
+{ path: '/edit-salary/:id', component: editsalary, name:'edit-salary'},
+
+
+
+
 
 
 ]
