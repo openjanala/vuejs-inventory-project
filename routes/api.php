@@ -44,3 +44,6 @@ Route::get('/salary','Api\SalaryController@AllSalary');
 Route::get('/salary/view/{id}','Api\SalaryController@ViewSalary');
 Route::get('/edit/salary/{id}','Api\SalaryController@EditSalary');
 Route::post('/salary/update/{id}','Api\SalaryController@SalaryUpdate');
+ 
+//for Stock
+Route::patch('/stock/update/{id}','Api\StockController@StockUpdate');

@@ -96,6 +96,13 @@
         </a>
       </li>
 
+      <li class="nav-item bg-danger">
+        <router-link class="nav-link" to="/pos">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span class=" text-white"><b>POS</b></span></router-link>
+      </li>
+
+
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-fw fa-folder"></i>
@@ -163,14 +170,20 @@
         </div>
       </li>
 
+      <li class="nav-item">
+        <router-link class="nav-link" to="/stock">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Stock</span></router-link>
+      </li>
+
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-fw fa-folder"></i>
-          <span>Customers</span>
+          <span>Reports</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <a class="dropdown-item" href="login.html">Add Customer</a>
-          <a class="dropdown-item" href="login.html">All Customers</a>
+          <a class="dropdown-item" href="login.html">One</a>
+          <a class="dropdown-item" href="login.html">Two</a>
         </div>
       </li>
       
