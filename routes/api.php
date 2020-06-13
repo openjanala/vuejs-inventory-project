@@ -34,7 +34,6 @@ Route::apiResource('/add-product','Api\ProductController');
 Route::apiResource('/products','Api\ProductController');
 
 //for Expense
-// Route::post('/add_expens','Api\ExpenseController');
 Route::apiResource('/add-expense','Api\ExpenseController');
 Route::apiResource('/expenses','Api\ExpenseController');
  
@@ -47,3 +46,8 @@ Route::post('/salary/update/{id}','Api\SalaryController@SalaryUpdate');
  
 //for Stock
 Route::patch('/stock/update/{id}','Api\StockController@StockUpdate');
+
+//for Customer
+Route::apiResource('/add-customer','Api\CustomerController');
+Route::apiResource('/customers','Api\CustomerController');
+ 

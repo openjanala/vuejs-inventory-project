@@ -29,45 +29,45 @@ class EmployeeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $validatedData = $request->validate([
-            'email' => 'required|unique:employees|max:255',
-            'name' => 'required',
-            'phone' => 'required|unique:employees',
-           ]);
+         {
+            $validatedData = $request->validate([
+                'email' => 'required|unique:employees|max:255',
+                'name' => 'required',
+                'phone' => 'required|unique:employees',
+            ]);
 
-           $photos = $request->photo;
-            if($photos){
-                $position = strpos($photos,';');
-                $sub = substr($photos, 0, $position);
-                $ext = explode('/',$sub)[1];
-                $name= time().".".$ext;
-                $img=Image::make($photos)->resize(200,240);
-                $upload_path='backend/images/employees/';
-                $image_url=$upload_path.$name;
-                $img->save($image_url);
+            $photos = $request->photo;
+                if($photos){
+                    $position = strpos($photos,';');
+                    $sub = substr($photos, 0, $position);
+                    $ext = explode('/',$sub)[1];
+                    $name= time().".".$ext;
+                    $img=Image::make($photos)->resize(200,240);
+                    $upload_path='backend/images/employees/';
+                    $image_url=$upload_path.$name;
+                    $img->save($image_url);
 
-                $employee = new Employee;
-                $employee->name = $request->name;
-                $employee->email = $request->email;
-                $employee->phone = $request->phone;
-                $employee->address = $request->address;
-                $employee->salary = $request->salary;
-                $employee->nid = $request->nid;
-                $employee->joining_date = $request->joining_date;
-                $employee->photo =  $image_url;
-                $employee->save();
-            }else{
-                $employee = new Employee;
-                $employee->name = $request->name;
-                $employee->email = $request->email;
-                $employee->phone = $request->phone;
-                $employee->address = $request->address;
-                $employee->salary = $request->salary;
-                $employee->nid = $request->nid;
-                $employee->joining_date = $request->joining_date;
-                $employee->save();
-            }
+                    $employee = new Employee;
+                    $employee->name = $request->name;
+                    $employee->email = $request->email;
+                    $employee->phone = $request->phone;
+                    $employee->address = $request->address;
+                    $employee->salary = $request->salary;
+                    $employee->nid = $request->nid;
+                    $employee->joining_date = $request->joining_date;
+                    $employee->photo =  $image_url;
+                    $employee->save();
+                }else{
+                    $employee = new Employee;
+                    $employee->name = $request->name;
+                    $employee->email = $request->email;
+                    $employee->phone = $request->phone;
+                    $employee->address = $request->address;
+                    $employee->salary = $request->salary;
+                    $employee->nid = $request->nid;
+                    $employee->joining_date = $request->joining_date;
+                    $employee->save();
+                }
 
         } 
 

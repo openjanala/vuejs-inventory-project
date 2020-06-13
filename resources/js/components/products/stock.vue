@@ -42,7 +42,7 @@
                      <td><img :src=" product.image" id="img_photo" /></td>
                     <td>{{product.category_name}}</td>
                     <td>{{product.buying_price}}</td>
-                    <td v-if="product.product_quantity >=2"><span class="badge badge-success">Available</span></td>
+                    <td v-if="product.product_quantity >=2"><span class="badge badge-primary">Available</span></td>
                     <td v-else="product.product_quantity >=2"><span class="badge badge-danger">Stock Out</span></td>
                     <td>{{product.product_quantity}}</td>
                     <td>

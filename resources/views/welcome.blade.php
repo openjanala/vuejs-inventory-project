@@ -102,6 +102,16 @@
           <span class=" text-white"><b>POS</b></span></router-link>
       </li>
 
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Customer</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+          <router-link class="dropdown-item" to="/add-customer"> Add Customer</router-link>
+          <router-link class="dropdown-item" to="/customers"> Manage Customer</router-link>
+        </div>
+      </li>
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -154,7 +164,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <router-link class="dropdown-item" to="/given-salary">Pay Salary</router-link>
-          <router-link class="dropdown-item" to="/salary">All Salary</router-link>
+          <router-link class="dropdown-item" to="/salary"> Manage Salary</router-link>
         </div>
       </li>
 
@@ -166,7 +176,7 @@
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <router-link class="dropdown-item" to="/add-expense"> Add Expense</router-link>
           <router-link class="dropdown-item" to="/today-expense"> Today Expense</router-link>
-          <router-link class="dropdown-item" to="/expenses"> All Expenses</router-link>
+          <router-link class="dropdown-item" to="/expenses"> Manage Expenses</router-link>
         </div>
       </li>
 
@@ -186,33 +196,7 @@
           <a class="dropdown-item" href="login.html">Two</a>
         </div>
       </li>
-      
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">Login Screens:</h6>
-          <a class="dropdown-item" href="login.html">Login</a>
-          <a class="dropdown-item" href="register.html">Register</a>
-          <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
-          <div class="dropdown-divider"></div>
-          <h6 class="dropdown-header">Other Pages:</h6>
-          <a class="dropdown-item" href="404.html">404 Page</a>
-          <a class="dropdown-item" href="blank.html">Blank Page</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
-      </li>
+   
     </ul>
 
     <div id="content-wrapper">
